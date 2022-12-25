@@ -1,4 +1,5 @@
 $(document).ready(function(){ 
+    // username availability
     $('#username').blur(function() {
         var username = $(this).val();
             $.ajax({
@@ -11,4 +12,27 @@ $(document).ready(function(){
                 }
             })
     })
+    // autocomplete textbox
+    $('#skill').keyup(function() {
+        var skill = $(this).val();
+
+        if(skill != '') {
+            $.ajax({
+                url: "check/checkskill.php",
+                method: "POST",
+                data: {skill:skill},
+                success: function(data) {
+                    $('#skillstatus').fadeIn();
+                    $('#skillstatus').html(data);
+                }
+            })
+        }
+    })
+
+    $(document).on('click', 'li', function() {
+        $("#skill").val($(this).text());
+        $('#skillstatus').fadeOut();
+    })
+
+
 });  
