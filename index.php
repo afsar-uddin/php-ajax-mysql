@@ -6,6 +6,7 @@
 			<li><a href="user.php" target="_blank">01. Check username availability.</a></li>
 			<li><a href="textbox.php" target="_blank">02. Autocomplete textbox</a></li>
 			<li><a href="password.php" target="_blank">03. Password show button</a></li>
+			<li><a href="refresh.php" target="_blank">04. Auto refresh div content</a></li>
 		</ul>
 	</div>
 </div>

@@ -44,6 +44,11 @@ class Project{
 
 		// var_dump($getSkill);
 	}
+
+	public function autorefresh($body) {
+		$query = "INSERT INTO tbl_autorefresh(body) VALUES('$body')";
+		$data = $this->db->insert($query);
+	}
  
 	
 }

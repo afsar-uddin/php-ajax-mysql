@@ -47,5 +47,22 @@ $(document).ready(function(){
         }
     })
 
+    // auto refresh div content
+    $('#autorefresh').on('click', function() {
+        var content = $('#body').val();
+        if($.trim(content) != '') {
+            $.ajax({
+                url: "check/checkrefresh.php",
+                method: "POST",
+                data: {body: content},
+                dataType: "text",
+                success: function(data) {
+                    $('#body').val('');
+                }
+            });
+            return false;
+        }
+    })
+
 
 });  
