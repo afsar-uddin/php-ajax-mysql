@@ -62,7 +62,11 @@ $(document).ready(function(){
             });
             return false;
         }
-    })
+    });
+
+    setInterval(() => {
+        $('#autorefreshtatus').load("check/getrefresh.php").fadeIn("slow");
+    }, 1000);
 
 
 });  

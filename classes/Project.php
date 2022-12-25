@@ -49,6 +49,25 @@ class Project{
 		$query = "INSERT INTO tbl_autorefresh(body) VALUES('$body')";
 		$data = $this->db->insert($query);
 	}
+
+	public function getDataWithoutRefresh() {
+		$query = "SELECT * FROM tbl_autorefresh ORDER BY id DESC";
+		$getContent = $this->db->select($query);
+
+		$result = '';
+		$result .= '<div class="data-content"></ul>';
+		if($getContent) {
+			while($data = $getContent->fetch_assoc()) {
+				$result .= '<li>'.$data['body'].'</li>';
+			}
+		}else {
+			$result .= '<li>No result found</li>';
+		}
+
+		$result .= '</ul></div>'; 
+
+		echo $result;
+	}
  
 	
 }
