@@ -34,5 +34,18 @@ $(document).ready(function(){
         $('#skillstatus').fadeOut();
     })
 
+    // Show / hide password
+    $('#showpassword').on('click', function() {
+        var pass = $('#password');
+        var fieldType = pass.attr('type');
+        if(fieldType == 'password') {
+            pass.attr('type', 'text');
+            $(this).text('Hide password');
+        }else {
+            pass.attr('type', 'password');
+            $(this).text('Show password');
+        }
+    })
+
 
 });  
